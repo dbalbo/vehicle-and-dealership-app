@@ -52,7 +52,7 @@ post('/vehicles') do
   @vehicle = Vehicle.new(make, model, year)
   @vehicle.save()
   @dealership = Dealership.find(params.fetch('dealership_id').to_i())
-  @dealership.add_car(@vehicle)
-  @vehicles = @dealership.cars()
+  @dealership.add_vehicle(@vehicle)
+  @vehicles = @dealership.vehicles()
   erb(:vehicles)
  end
